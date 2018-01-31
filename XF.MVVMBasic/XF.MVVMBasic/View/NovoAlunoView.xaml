@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVMBasic.View.NovoAlunoView" Title="Novo Aluno">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#2196F3" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Nome" />
+            <Entry Placeholder="Informe seu nome" Text="{Binding Nome}" />
+            <Label Text="RM" />
+            <Entry Placeholder="Informe seu RM" Text="{Binding RM}" />
+            <Label Text="E-mail" />
+            <Entry Placeholder="Informe seu e-mail" Text="{Binding Email}" />
+            <Button Text="Salvar" Clicked="SalvarNovoAluno" Style="{StaticResource buttonStyle}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVMBasic.View.AlunoView" Title="Lista de Alunos">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="#2196F3" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#03A9F4">
+            <ListView x:Name="lstAlunos" HasUnevenRows="True" SeparatorColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                <Label Text="{Binding Nome}" TextColor="White" Style="{DynamicResource ListItemTextStyle}" />
+                                <Label Text="{Binding RM, StringFormat='RM: {0}'}" TextColor="White"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" />
+                                <Label Text="{Binding Email}" TextColor="White"
+                                       Style="{DynamicResource ListItemDetailTextStyle}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Novo Aluno" Clicked="NovoAluno" VerticalOptions="End" Style="{StaticResource buttonStyle}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
